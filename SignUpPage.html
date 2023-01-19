@@ -8,9 +8,9 @@
     <title>Wishlist</title>
     <link rel="icon" href="wish.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="profile.css">
 
 </head>
-
 <body>
     <header class="header">
         <div class="headerLeft">
@@ -65,7 +65,7 @@
             <div class="profileAndCart">
                 <div class="profileContainer">
                     <div class="profileIcon">
-                        <img src="./img/user.png"  onclick="window.location.href='LogIn.html'" />
+                        <img src="./img/user.png" />
                     </div>
                     <p onclick="window.location.href='LogIn.html'">Profile</p>
                 </div>
@@ -315,87 +315,82 @@
             </ul>
         </div>
     </div>
-    <!--lowest prices-->
-    <div class="lowestpriceContainer">
-        <div class="lowestPrice_text">
-            <h1>Lowest Prices </h1>
-            <h1>Best Quality Shopping</h1>
-            <div class="lowestPriceWhay">
-                <div class="lowestPriceItem">
-                    <div class="lowestPrice_icon">
-                        <img src="https://images.meesho.com/images/pow/freeDelivery.svg" />
-                    </div>
-                    <p>Free Delivery</p>
-                </div>
 
-                <div class="lowestPriceItem">
-                    <div class="lowestPrice_icon">
-                        <img src="https://images.meesho.com/images/pow/cod.svg" />
-                    </div>
-                    <p>Cash on Delivery</p>
-                </div>
-                <div class="lowestPriceItem">
-                    <div class="lowestPrice_icon">
-                        <img src="https://images.meesho.com/images/pow/easyReturns.svg" />
-                    </div>
-                    <p>Easy Returns</p>
-                </div>
-            </div>
 
-            <button class="downloadApp_contianer">
-                <div class="downloadAppIcon">
-                    <img src="https://images.meesho.com/images/pow/playstoreSmallIcon.webp" />
-                </div>
-                <p>Download the Meesho App</p>
-            </button>
+
+    <section class="searchWindow">
+        <div class="searchCloseBtn">
+            <img src="https://i.postimg.cc/Lgdct409/close.png" alt="">
+        </div>
+        <div id="searchWindowDiv">
 
         </div>
-        <div class="lowestPrice_image">
-            <img src="https://images.meesho.com/images/marketing/1631722939962.webp" />
+    </section>
+    <section class="blurBack"></section>
+    <!-- Sign up Page -->
+    <div id="RegBox">
+        <div id="SignUpBox">
+            <p style="font-weight: bold">SIGN UP | Become a Member</p>
+            <br>
+            <br>
+            <form id="form">
+                <!-- <label for="">UserName</label> -->
+                <input id="usernm" type="username" placeholder="Please Enter your Name*" />
+                <br>
+                <!-- <label for="">Email</label> -->
+                <input id="email" type="email" placeholder="Please Enter your E-Mail ID*" />
+                <br>
+                <!-- <label for="">Mobile No</label> -->
+                <input id="mobile" type="text" maxlength="10" placeholder="Please Enter your 10 digit Mobile Number*" />
+                <br>
+                <!-- <label for="">Password</label>  -->
+                <input id="password" type="password" placeholder="Please Set a Password*" />
+                <br>
+
+                <button id="SignUpBut" type="submit">SIGN UP</button>
+                <button id="SignUpBut" type="submit" onclick="window.location.href='LogInPage.html'">SIGN IN</button>
+            </form>
         </div>
+
     </div>
+    <br>
 
-
-    <!--Top Categories to choose from-->
-    <div class="topCategoriesFrom">
-        <div class="topCategoriesHeading">
-            <span class="horizontalLine"></span>
-            <h1>Top Categories to choose from</h1>
-            <span class="horizontalLine"></span>
-        </div>
-        <div class="topCategoreisImage">
-            <img src="https://images.meesho.com/images/marketing/1649760442043.webp" />
-            <img src="https://images.meesho.com/images/marketing/1649760423313.webp" />
-            <img src="https://images.meesho.com/images/marketing/1649759799809.webp" />
-        </div>
-
-        <div class="essentialContaienr">
-            <img src="https://images.meesho.com/images/marketing/1664368165450.webp" class="essen-btn" />
-
-            <div class="essential_item">
-                <img src="https://images.meesho.com/images/marketing/1649760808952.webp" />
-                <img src="https://images.meesho.com/images/marketing/1664364866805.webp" />
-            </div>
-
-            <div class="essential_item">
-                <img src="https://images.meesho.com/images/marketing/1649760703179.webp" />
-                <img src="https://images.meesho.com/images/marketing/1664364917657.webp" />
-            </div>
-
-            <div class="essential_item">
-                <img src="https://images.meesho.com/images/marketing/1649760786763.webp" />
-                <img src="https://images.meesho.com/images/marketing/1664364898513.webp" />
-            </div>
-
-        </div>
     </div>
-
-
-
-
-
-
 </body>
-<script src="script.js" type="module"></script>
 
 </html>
+<script type="text/javascript" src="./script/search.js"></script>
+<script src="./scripts/footer.js"></script>
+
+
+<script>
+    document.getElementById("form").addEventListener("submit", userList);
+    var arr = JSON.parse(localStorage.getItem("user")) || [];
+
+    function userList(e) {
+        e.preventDefault();
+        console.log("clicked");
+
+        var usernm = document.getElementById("usernm").value;
+        var email = document.getElementById("email").value;
+        var mobile = document.getElementById("mobile").value;
+        var password = document.getElementById("password").value;
+        if (!email || !mobile || !password) {
+            alert("Enter all of the details");
+        }
+        else {
+            var userObj = {
+                usernm: usernm,
+                email: email,
+                mobile: mobile,
+                password: password,
+            };
+            arr.push(userObj);
+            localStorage.setItem("user", JSON.stringify(arr));
+            alert("Welcome Aboard! Let's Get Shopping");
+            window.location.href = "LogInPage.html";
+        }
+    }
+
+
+</script>
