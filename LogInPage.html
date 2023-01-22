@@ -1,171 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishlist</title>
-    <link rel="icon" href="wish.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="homePage.css" />
-    <link rel="stylesheet" href="search.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="wish.png">
+  <link rel="stylesheet" href="homePage.css">
+  <link rel="stylesheet" href="search.css">
+  <title>Sign In | Messho</title>
 </head>
 
-
 <body>
-    <!-- Navigation Bar -->
-    <section class="navbar">
-      <div class="uppernav">
-        <a href="index.html"><img
-          src="https://cdn.hevodata.com/customer/logo/8c76f62bd88177a78bb6e2810a244446.png"
-          alt="logo"
-          class="logo"
-        /></a>
-        <div class="navSearch">
-          <img
-            src="https://i.postimg.cc/90c6jfMm/search-interface-symbol.png"
-            alt="search"
-            class="NavSearchIcon"
-          />
-          <input
-            type="text"
-            id="keyword"
-            class="searchContainer"
-            placeholder="Try Saree,Kurthi or Seach by Product Code"
-            onkeypress="handleKeyPress(event)"
-          />
+  <!-- Navigation Bar -->
+  <section class="navbar">
+    <div class="uppernav">
+      <a href="index.html"><img src="https://cdn.hevodata.com/customer/logo/8c76f62bd88177a78bb6e2810a244446.png"
+          alt="logo" class="logo" /></a>
+      <div class="navSearch">
+        <img src="https://i.postimg.cc/90c6jfMm/search-interface-symbol.png" alt="search" class="NavSearchIcon" />
+        <input type="text" id="keyword" class="searchContainer" placeholder="Try Saree,Kurthi or Seach by Product Code"
+          onkeypress="handleKeyPress(event)" />
+      </div>
+      <div class="navRightSec">
+        <div class="navAppPromo">
+          <img src="https://i.postimg.cc/sXqr2Fz4/smartphone.png" alt="app" class="navAppIcon" />
+          <span id="tagDwn">Download App</span>
         </div>
-        <div class="navRightSec">
-          <div class="navAppPromo">
-            <img
-              src="https://i.postimg.cc/sXqr2Fz4/smartphone.png"
-              alt="app"
-              class="navAppIcon"
-            />
-            <span id="tagDwn">Download App</span>
-          </div>
-          <span class="navSuplier">Become a Supplier</span>
-          <div class="navProfile" onclick="window.location.href='SignUpPage.html'">
-            <img
-              src="https://i.postimg.cc/wjtLkcVz/user.png"
-              alt="account"
-              class="navAccountIcon"
-            />
-            <span
-              class="SignUpHover"
-              >Profile</span
-            >
-          </div>
-          <div class="navcart" onclick="window.location.href='CartPage.html'">
-            <img
-              src="https://i.postimg.cc/sXBgkwMf/bag.png"
-              alt="cart"
-              class="cartIcon"
-            />
-            <span
-              class="SignUpHover"
-              onclick="window.location.href='CartPage.html'"
-              >Cart</span
-            >
-          </div>
-          <div id="cart-item-counter">0</div>
+        <span class="navSuplier">Become a Supplier</span>
+        <div class="navProfile" onclick="window.location.href='SignUpPage.html'">
+          <img src="https://i.postimg.cc/wjtLkcVz/user.png" alt="account" class="navAccountIcon" />
+          <span class="SignUpHover">Profile</span>
         </div>
-      </div>
-      <div class="bottomNav">
-        <div class="nav-menu">
-          <ul>
-            <li class="dropdown" onclick="window.location.href='viewall.html'">View All</li>
-            <li class="dropdown" onclick="window.location.href='WomenWestern.html'">Women Western
-              <div class="submenu">
-                <div class="subCat">
-                  <span class="catHeading">Topwear</span>
-                  <span>Dresses</span>
-                  <span>Tops</span>
-                  <span>Sweaters</span>
-                  <span>Jumpsuits</span>
-                </div>
-                <div class="subCat" style="margin-left: 1em;">
-                  <span class="catHeading">Bottomwear</span>
-                  <span>Jeans</span>
-                  <span>Jeggings</span>
-                  <span>Palazzos</span>
-                  <span>Shorts</span>
-                  <span>Skirts</span>
-                </div>
-              </div>
-            </li>
-            <li onclick="window.location.href='Jewellery.html'">Jewellery & Accessories</li>
-            <li onclick="window.location.href='Men.html'">Men</li>
-            <li>Beauty & Health</li>
-            <li>Bath & Body</li>
-            <li>Bags & Footwear</li>
-            <li>Home & Kitchen</li>
-            <li>Kids</li>
-            <li>Electronics</li>
-          </ul>
+        <div class="navcart" onclick="window.location.href='CartPage.html'">
+          <img src="https://i.postimg.cc/sXBgkwMf/bag.png" alt="cart" class="cartIcon" />
+          <span class="SignUpHover" onclick="window.location.href='CartPage.html'">Cart</span>
         </div>
+        <div id="cart-item-counter">0</div>
       </div>
-    </section>
-    <section class="searchWindow">
-      <div class="searchCloseBtn">
-        <img src="https://i.postimg.cc/Lgdct409/close.png" alt="">
-      </div>
-      <div id="searchWindowDiv">
-        
-      </div>
-    </section>
-  <section class="blurBack"></section>
-    <!-- <label for="">Sign Up</label> -->
-    <div id="RegBox">
-        <div id="SignInBox">
-            <p style="font-weight: bold">SIGN IN | Already have an account</p>
-            <br>
-            <br>
-            <form action="" id="form">
-                <!-- <label for="">Email</label> -->
-                <input id="email" type="email" placeholder="Please Enter your E-Mail ID*" />
-                <br>
-                <!-- <label for="">Password</label>  -->
-                <input id="password" type="password" placeholder="Enter Password*" />
-                <br>
-                <button id="SignUpBut" type="submit" onclick="window.location.href='LogInPage.html'">SIGN IN</button>
-                <button id="SignUpBut" type="submit" onclick="window.location.href='SignUpPage.html'">SIGN UP</button>
-              </form>
-        </div>               
     </div>
-    <br>
+    <div class="bottomNav">
+      <div class="nav-menu">
+        <ul>
+          <li class="dropdown" onclick="window.location.href='viewall.html'">View All</li>
+          <li class="dropdown" onclick="window.location.href='WomenWestern.html'">Women Western
+            <div class="submenu">
+              <div class="subCat">
+                <span class="catHeading">Topwear</span>
+                <span>Dresses</span>
+                <span>Tops</span>
+                <span>Sweaters</span>
+                <span>Jumpsuits</span>
+              </div>
+              <div class="subCat" style="margin-left: 1em;">
+                <span class="catHeading">Bottomwear</span>
+                <span>Jeans</span>
+                <span>Jeggings</span>
+                <span>Palazzos</span>
+                <span>Shorts</span>
+                <span>Skirts</span>
+              </div>
+            </div>
+          </li>
+          <li onclick="window.location.href='Jewellery.html'">Jewellery & Accessories</li>
+          <li onclick="window.location.href='Men.html'">Men</li>
+          <li>Beauty & Health</li>
+          <li>Bath & Body</li>
+          <li>Bags & Footwear</li>
+          <li>Home & Kitchen</li>
+          <li>Kids</li>
+          <li>Electronics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="searchWindow">
+    <div class="searchCloseBtn">
+      <img src="https://i.postimg.cc/Lgdct409/close.png" alt="">
+    </div>
+    <div id="searchWindowDiv">
+
+    </div>
+  </section>
+  <section class="blurBack"></section>
+  <!-- <label for="">Sign Up</label> -->
+  <div id="RegBox">
+    <div id="SignInBox">
+      <p style="font-weight: bold">SIGN IN | Already have an account</p>
+      <br>
+      <br>
+      <form action="" id="form">
+        
+        <input id="email" type="email" placeholder="Please Enter your E-Mail ID*" />
+        <br>
+        <input id="password" type="password" placeholder="Enter Password*" />
+        <br>
+        <button id="SignUpBut" type="submit">SIGN IN</button>
+        <button id="SignUpBut" type="submit" onclick="window.location.href='SignUpPage.html'">SIGN UP</button>
+      </form>
+    </div>
+  </div>
+  <br>
+
+  <div id="footer">
+    <div>
+      <h2>Shop No-Stop on Meesho</h2>
+      <p>Trusted by more than 1 Crore Indians
+        Cash on Delivery | Free Delivery</p>
+      <img src="https://images.meesho.com/images/pow/playstore-icon.webp" ; alt="" style="height:35px ; width:70px">
+      <img style="height:35px ; width:70px" src="https://images.meesho.com/images/pow/appstore-icon.webp" alt="">
+    </div>
+    <div>
+      <a href="">Careers</a>
+      <a href="">Become a supplier</a>
+    </div>
+    <div>
+      <a href="">Legal And Policies</a>
+      <a href="">Meesho Tech Blog</a>
+    </div>
+    <div>
+      <a href="">
+        <h3>Contact Us</h3>
+      </a>
+      <a href="">query@meesho.com</a>
+    </div>
+
+  </div>
+
 </body>
+
 </html>
+<script type="text/javascript" src="search.js"></script>
+
 <script>
-    document.getElementById("form").addEventListener("submit", signIn);
-    var regUser = JSON.parse(localStorage.getItem("user")) || [];
-    function signIn(e) {
+  document.getElementById("form").addEventListener("submit", signIn);
+  var regUser = JSON.parse(localStorage.getItem("user")) || [];
+  function signIn(e) {
     e.preventDefault();
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
     if (!email || !password) {
-        alert("Enter All of the details");
+      alert("Enter All of the details");
+    }
+    else {
+      for (var i = 0; i < regUser.length; i++) {
+        if (regUser[i].email === email && regUser[i].password === password) {
+          alert("WELCOME BACK! We missed you .");
+          window.location.href = "index.html";
+          return;
         }
-        else {
-            for (var i = 0; i < regUser.length; i++) {
-                if (regUser[i].email === email && regUser[i].password === password) {
-                    alert("WELCOME BACK! We missed you .");
-                    window.location.href = "index.html";
-            return;
-            }
-            else if (email == "admin@gmail.com" && password == "admin") {
-                alert("SignIn Sucessfully !");
-                //redirect Home page
-                window.location.href = "index.html";
-                return;
-            }
+        else if (email == "admin@gmail.com" && password == "admin") {
+          alert("SignIn Sucessfully !");
+          window.location.href = "index.html";
+          return;
+        }
       }
       alert("ERROR! Wrong E-Mail Id or Password");
     }
   }
 </script>
-
-<script type="text/javascript" src="search.js"></script>
-<script type="text/javascript" src="homePage.js"></script>

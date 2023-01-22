@@ -7,7 +7,7 @@ url_arr.push(`https://super-paint-flamingo.glitch.me/JewelleryData`);
 let vals = [];
 let filtered = [];
 
-for (let i = 0; i < 3; i++){
+for (let i = 0; i < 3; i++) {
   fetchAPI(url_arr[i]);
 }
 
@@ -26,7 +26,7 @@ function handleKeyPress(e) {
     filtered = [];
   }
 }
-function fiterSearch(keyword){
+function fiterSearch(keyword) {
   vals.forEach((el) => {
     if (el.title.includes(keyword)) {
       filtered.push(el)
@@ -141,7 +141,7 @@ async function getresult(data) {
   });
 }
 // Search Div Close button Script
-document.querySelector(".searchCloseBtn").addEventListener("click",()=>{
+document.querySelector(".searchCloseBtn").addEventListener("click", () => {
   document.querySelector(".searchWindow").style.display = "none";
   document.querySelector(".blurBack").style.display = "none";
 })
@@ -151,14 +151,12 @@ function product_description(el) {
   localStorage.setItem("product_detail", data)
   window.location.href = 'product_description.html'
 }
-
-// cart item
-// setInterval(mapItems,100);
-//     function mapItems(){
-//         var cartList=JSON.parse(localStorage.getItem("product_data"));
-//          var count=0;
-//         cartList.map(function(element){
-//             count++
-//         });
-//          document.querySelector("#cart-item-counter").textContent=count;
-//     }
+setInterval(mapItems, 100);
+function mapItems() {
+  var cartList = JSON.parse(localStorage.getItem("product_data"));
+  var count = 0;
+  cartList.map(function (element) {
+    count++
+  });
+  document.querySelector("#cart-item-counter").textContent = count;
+}
