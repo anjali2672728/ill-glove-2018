@@ -367,48 +367,64 @@ nav ul li:hover .subMenu{
 }
 
 
-
-
-
-
-
-
-
-/* Footer */
-/*  */
-  /* #footer > div > h2 {
-    font-weight: 700;
-  }
-  #footer > div > a {
-    display: block;
-    margin-top: 30px;
-    text-decoration: none;
-    color: RGB(110, 107, 108);
-    font-weight: 500;
-  }
-  #footer > div > img {
-    margin-top: 39px;
-    margin-left: 4px;
-  }
-  #footer > div > p {
-    color: RGB(110, 107, 108);
-  } */
-  /* .aboutMeesho {
-    width: 70%;
-    margin: auto;
-    background-color: white;
-    margin-top: 13px;
-  }
-  .aboutMeesho > button {
-    width: 95%;
-    height: 70px;
-    text-align: left;
-    background-color: white;
-    border: none; */
-  
-  #aboutMeeshoContent {
+.submenu {
+    display: flex;
+    position: absolute;
+    margin-top: 1em;
     display: none;
+    border: 1px solid rgba(61, 61, 61, 0.199);
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: white;
   }
+  .subCat {
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  .subCat span {
+    margin: 0.3em;
+  }
+  .subCat span:hover {
+    color: #ff488b;
+  }
+  .subCat .catHeading {
+    margin-bottom: 1em;
+    color: #ff488b;
+  }
+  .nav-menu ul .dropdown:hover .submenu{
+    display: flex;
+  }
+
+  li:hover {
+    color: #ff488b;
+  }
+  .nav-menu ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    max-width: 1350px;
+    margin: auto;
+    cursor: pointer;
+  }
+  .bottomNav {
+    margin-top: 1em;
+    border-top: 1px solid rgba(61, 61, 61, 0.199);
+    border-bottom: 1px solid rgba(61, 61, 61, 0.199);
+  }
+  .nav-menu ul li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  
+  .bottomNav ul{
+    list-style: none;
+  }
+
+
+
+
+
 
 
 
